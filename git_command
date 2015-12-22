@@ -1,0 +1,43 @@
+git config --global user.name "JhuangSiteAnalytics"
+
+git config --global user.email "jj.retail08@gmail.com"
+
+cd Desktop
+git clone https://github.com/JhuangSiteAnalytics/JhuangSiteAnalytics.git
+
+git status
+
+git add README.md
+
+git commit -m "updated readme file for better description"
+
+git log
+
+git status
+
+# git remote add origin https://github.com/JhuangSiteAnalytics/JhuangSiteAnalytics.git
+
+git push -u origin master
+
+touch testfile.txt
+
+ls
+
+vim testfile.txt
+
+git status
+
+git add .
+
+git commit -m "test file text is added as a test"
+
+git status
+
+git push
+
+git pull origin mater
+
+
+
+## download files from other's Github repository
+git clone git://github.com/SpringSource/spring-data-graph-examples.git
