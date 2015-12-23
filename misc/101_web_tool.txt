@@ -1,0 +1,100 @@
+https://www.youtube.com/watch?v=FmsLJHikRf8
+http://httparchive.org/
+http://www.softwareishard.com/har/viewer/
+http://phantomjs.org/
+
+http://stackoverflow.com/questions/25575575/what-do-i-do-with-har-information
+https://code.google.com/p/harstorage/wiki/PythonTutorial
+
+phantomjs netsniff.js http://www.samsung.com/us/ > samsung_hp.har
+
+
+
+conda install -U sst
+
+################################################
+## Goal - extract page load stats aumatically
+################################################
+
+########################
+## step 1 - install phantomjs
+## http://phantomjs.org/
+########################
+
+
+########################
+## step 2 - install npm / node
+## https://www.npmjs.com/
+########################
+
+node -v
+npm -v
+
+########################
+## step 3 - install yslow
+## test yslow
+########################
+
+
+npm install yslow -g
+
+yslow --help
+
+
+########################
+## step 4 - grab har file with phantomjs
+########################
+phantomjs netsniff.js http://www.samsung.com/us/ > samsung_hp.har
+
+
+########################
+## step 5 - yslow to get information in different format
+########################
+
+yslow --info basic --format plain C:\Users\jjret\Documents\web_debugger\dump\fredfrederickchryslerlaurel.har
+
+yslow --info all --format plain C:\Users\jjret\Documents\web_debugger\dump\fredfrederickchryslerlaurel.har
+
+yslow --info all --format json C:\Users\jjret\Documents\web_debugger\dump\fredfrederickchryslerlaurel.har > C:\Users\jjret\Documents\web_debugger\dump\fredfrederickchryslerlaurel.json
+
+########################
+## if we want to view the performance in local host:
+## step 6 - install ruby
+## http://rubyinstaller.org/downloads/
+########################
+
+########################
+## step 7 - install ruby
+## http://rubyinstaller.org/downloads/
+########################
+
+gem install har
+
+har C:\Users\jjret\Documents\web_debugger\dump\fredfrederickchryslerlaurel.har
+
+
+########################
+## step 8 - yslow create json file
+## python pick up json, process and merge, and do visual
+## http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python
+########################
+yslow --info all --format json C:\Users\jjret\Documents\web_debugger\dump\fredfrederickchryslerlaurel.har > C:\Users\jjret\Documents\web_debugger\dump\fredfrederickchryslerlaurel.json
+
+
+########################
+## step 9 - file processing in python
+########################
+import json
+from pprint import pprint
+
+with open('C:/Users/jjret/Documents/web_debugger/dump/fredfrederickchryslerlaurel.json') as data_file:
+    data = json.load(data_file)
+
+pprint(data)
+
+
+print("===================")
+comps = data["comps"]
+print(comps)
+
+print("===================")
