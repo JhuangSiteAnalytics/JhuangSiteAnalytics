@@ -1,0 +1,10 @@
+
+1. Check the registration info
+
+http://whois.domaintools.com/
+
+2. shorten link
+https://bitly.com/
+
+3. Website basic usage stats
+https://www.compete.com/
